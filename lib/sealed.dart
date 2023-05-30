@@ -30,3 +30,21 @@ double calculateArea(Shape shape) => switch (shape) {
   Square(length: var l) => l * l,
   Circle(radius: var r) => math.pi * r * r
 };
+
+// 상속이 안되는 클래스
+base class Person{
+  final String name;
+  final int age;
+
+  Person(this.name, this.age);
+}
+
+// class Idol implements Person{
+//   @override
+//   // TODO: implement age
+//   int get age => throw UnimplementedError();
+
+//   @override
+//   // TODO: implement name
+//   String get name => throw UnimplementedError();
+// }
