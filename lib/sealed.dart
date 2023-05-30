@@ -21,6 +21,11 @@ class Circle implements Shape {
   Circle(this.radius);
 }
 
+// class Rectangle implements Shape {
+//   final double radius;
+//   Rectangle(this.radius);
+// }
+
 double calculateArea(Shape shape) => switch (shape) {
   Square(length: var l) => l * l,
   Circle(radius: var r) => math.pi * r * r

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_11/json_destructing.dart';
+import 'package:flutter_application_11/object_destructing.dart';
 import 'package:flutter_application_11/record.dart';
 import 'package:flutter_application_11/sealed.dart';
 import 'package:flutter_application_11/usable_switches.dart';
@@ -55,36 +56,33 @@ class MyHomePage extends StatelessWidget {
               onPressed: () => usableSwitches(CharCode.slash),
               child: Text('usable siwtches'),
             ),
-            //! 오류
-            // ElevatedButton(
-            //   onPressed: () => objectDestructing(),
-            //   child: Text('object_destructing'),
-            // ),
-
-            //! 오류
-            // ListTile(
-            //   leading: const Icon(Icons.weekend),
-            //   title: const Text("Welcome"),
-            //   enabled: hasNextStep,
-            //   subtitle: hasNextStep ? const Text("Tap to advance.") : null,
-            //   onTap: hasNextStep
-            //       ? () {
-            //           print('onTap11');
-            //         }
-            //       : null,
-            //   trailing: hasNextStep ? null : const Icon(Icons.stop),
-            // ),
-            // ListTile(
-            //   leading: const Icon(Icons.weekend),
-            //   title: const Text("Welcome"),
-            //   enabled: hasNextStep,
-            //   if(hasNextStep) ...(
-            //       subtitle: const Text("Tap to advance."),
-            //       onTap: () { advance(); },
-            //   ) else ...(
-            //       trailing: const Icon(Icons.stop),
-            //   )
-            // ),
+            ElevatedButton(
+              onPressed: () => objectDestructing(),
+              child: Text('object_destructing'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.weekend),
+              title: const Text("Welcome"),
+              enabled: hasNextStep,
+              subtitle: hasNextStep ? const Text("Tap to advance.") : null,
+              onTap: hasNextStep
+                  ? () {
+                      print('onTap11');
+                    }
+                  : null,
+              trailing: hasNextStep ? null : const Icon(Icons.stop),
+            ),
+            //!오류
+            ListTile(
+              leading: const Icon(Icons.weekend),
+              title: const Text("Welcome"),
+              // if(hasNextStep) ...(
+              //     subtitle: const Text("Tap to advance."),
+              //     onTap: () { advance(); },
+              // ) else ...(
+              //     trailing: const Icon(Icons.stop),
+              // )
+            ),
           ],
         ),
       ),
