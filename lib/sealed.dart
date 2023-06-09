@@ -31,20 +31,64 @@ double calculateArea(Shape shape) => switch (shape) {
   Circle(radius: var r) => math.pi * r * r
 };
 
-// 상속이 안되는 클래스
-base class Person{
+// 여러 클래스
+
+// 상속은 안되고 꼭 구현해야할 내용들만 기술하는 클래스를 만들때입니다. 추상 클래스를 생각하시면 됩니다.
+
+abstract class AbstractClass {
+  String name;
+  String age;
+
+  AbstractClass({
+    required this.name,
+    required this.age,
+  });
+
+  void callName();
+}
+
+interface class InterfaceClass{
+  String name;
+  String age;
+  InterfaceClass({
+    required this.name,
+    required this.age,
+  });
+}
+
+// private members들만 상속해주는 클래스를 만들때입니다. 이어 나오는 final의 반대 케이스로 이해하시면 됩니다.
+base class BaseClass{
   final String name;
   final int age;
 
-  Person(this.name, this.age);
+  BaseClass(this.name, this.age);
 }
 
-// class Idol implements Person{
-//   @override
-//   // TODO: implement age
-//   int get age => throw UnimplementedError();
+// 더이상 sub class를 만들수 없는 마지막 클래스를 만들때입니다.
+final class FinalClass{
+  final String name;
+  final int age;
 
-//   @override
-//   // TODO: implement name
-//   String get name => throw UnimplementedError();
-// }
+  FinalClass(this.name, this.age);
+}
+
+mixin MixinClass{
+  String? code;
+
+  void fly(){
+    print('I can fly');
+  }
+  void say(){
+    print('I am a bird');
+  }
+}
+
+class Person4_1 extends AbstractClass{
+  Person4_1({required super.name, required super.age});
+
+  @override
+  void callName() {
+    // TODO: implement callName
+  }
+}
+
